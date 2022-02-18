@@ -21,19 +21,14 @@ function Home() {
           consequuntur ipsam iste, id, minima sit nulla quidem numquam, vitae
           hic quae sapiente nostrum vel ut.
         </Text>
+
+        <Link href='/chene'>Chêne</Link>
+        <Link href='/sapin'>Sapin</Link>
+        <Link href='/palmier'>Palmier</Link>
+
       </section>
 
       <hr className="border-t border-accents-2 my-6" />
-
-      <section className="flex flex-col gap-3">
-        <Text variant="h2">Header</Text>
-        <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quasi{' '}
-          <code>dolorum natus</code>, quaerat voluptatum laboriosam minima quis
-          consectetur quam architecto veniam! Ex atque rem, unde tempora eaque
-          quasi mollitia tenetur.
-        </Text>
-      </section>
     </Page>
   )
 }
