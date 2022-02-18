@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
-import { Layout, Page, Text, Button } from '@vercel/examples-ui'
+import { Layout, Link, Page, Text, Button } from '@vercel/examples-ui'
 import { HOME_BRANDS } from '@lib/brand'
 
 export default function Home() {
@@ -17,11 +17,14 @@ export default function Home() {
 
   return (
     <Page>
-      <Text variant="h2" className="mb-6">
-        Home page variant
+      <Text variant="h2" className="mb-6" style={{ color: '#BB8141'}}>
+        Home page
       </Text>
       <Text className="text-lg mb-4">
-        You're currently on <b>brand {brand.toUpperCase()}</b>
+        <Link href='/about'>About</Link> us
+      </Text>
+      <Text className="text-lg mb-4">
+        Welcome to <b>brand {brand.toUpperCase()}</b> flooring.
       </Text>
       <Text className="mb-4">
         You can use the buttons below to change your assigned brand and refresh

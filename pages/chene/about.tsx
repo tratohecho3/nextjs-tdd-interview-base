@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <Page>
       <Text variant="h2" className="mb-6">
-        About page
+        About <b>brand {brand.toUpperCase()}</b>
       </Text>
       <Text className="text-lg mb-4">
-        You're currently on <b>brand {brand.toUpperCase()}</b>
+        We provide oak wood for furniture making and flooring, timber-frame buildings, and veneer production.
       </Text>
     </Page>
   )
