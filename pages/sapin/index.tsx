@@ -21,14 +21,14 @@ export default function Home({ color, products }: Props) {
         Home page
       </Text>
       <Text className="text-lg mb-4">
-        You're currently visiting the <b>brand {brand.toUpperCase()}</b> {products.map(({name}) => name).join(', ')} website.
+        You&apos;re currently visiting the <b>brand {brand.toUpperCase()}</b> {products.map(({name}) => name).join(', ')} website.
       </Text>
       <Text className="mb-4">
         You can use the buttons below to change your assigned brand and refresh
         the page:
       </Text>
       <Text className="text-bold mb-4">
-        <Link href='/about'>About</Link>
+        <Link href="/about">About</Link>
       </Text>
     </Page>
   )
