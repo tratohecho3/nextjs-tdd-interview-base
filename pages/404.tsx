@@ -34,7 +34,7 @@ export default function Custom404() {
         <Text>You can use a query parameter to view one of the avilable brands:</Text>
 
         <Text className="text-lg mb-4">
-          <Link href='/?brand=chene'>Chene</Link>
+          <Link as='/' href='/chene?brand=chene'>Chene</Link>
         </Text>
         <Text className="text-lg mb-4">
           <Link href='/?brand=sapin'>Sapin</Link>
