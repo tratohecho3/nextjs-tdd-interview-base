@@ -1,11 +1,10 @@
-import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
 import { Layout, Page, Text, Button } from '@vercel/examples-ui'
 import { HOME_BRANDS } from '@lib/brand'
+import { useBrand } from '@hooks/useBrand';
 
 export default function Home() {
-  const router = useRouter()
-  const brand = router.query.brand || 'chene' as string
+  const brand = useBrand();
 
   return (
     <Page>

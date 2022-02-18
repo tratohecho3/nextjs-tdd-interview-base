@@ -1,19 +1,11 @@
-import { useRouter } from 'next/router'
+
 import Cookies from 'js-cookie'
 import { Layout, Link, Page, Text, Button } from '@vercel/examples-ui'
 import { HOME_BRANDS } from '@lib/brand'
+import { useBrand } from '@hooks/useBrand';
 
 export default function Home() {
-  const router = useRouter()
-  const setBrand = (brand: string) => () => {
-    Cookies.set('brand-home', brand)
-    router.reload()
-  }
-  const removeBrand = () => {
-    Cookies.remove('brand-home')
-    router.reload()
-  }
-  const brand = router.query.brand || 'sapin' as string
+  const brand = useBrand();
 
   return (
     <Page>
@@ -27,19 +19,6 @@ export default function Home() {
         You can use the buttons below to change your assigned brand and refresh
         the page:
       </Text>
-      {HOME_BRANDS.map((brand) => (
-        <Button
-          key={brand}
-          variant="secondary"
-          onClick={setBrand(brand)}
-          style={{ marginRight: '0.625rem' }}
-        >
-          Brand {brand.toUpperCase()}
-        </Button>
-      ))}
-      <Button variant="black" onClick={removeBrand}>
-        Remove brand
-      </Button>
       <Text className="text-bold mb-4">
         <Link href='/about'>About</Link>
       </Text>
