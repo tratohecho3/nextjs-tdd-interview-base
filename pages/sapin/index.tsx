@@ -1,7 +1,5 @@
 
-import Cookies from 'js-cookie'
-import { Layout, Link, Page, Text, Button } from '@vercel/examples-ui'
-import { HOME_BRANDS } from '@lib/brand'
+import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
 
 export default function Home() {

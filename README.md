@@ -1,6 +1,6 @@
 # multi-brand example
 
-This example shows how -------------------------
+This example shows how to render multiple brands using a _middleware.
 
 ## Demo
 

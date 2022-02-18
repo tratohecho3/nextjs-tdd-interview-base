@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Layout, Text, Page, Code, Link } from '@vercel/examples-ui'
+import { Layout, Text, Page, Link } from '@vercel/examples-ui'
 
 function Home() {
   return (
@@ -16,10 +16,9 @@ function Home() {
       <section className="flex flex-col gap-6">
         <Text variant="h1">multi-brand usage example</Text>
         <Text>
-          This example shows how to Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Voluptas eligendi aliquam officiis aliquid neque
-          consequuntur ipsam iste, id, minima sit nulla quidem numquam, vitae
-          hic quae sapiente nostrum vel ut.
+          This example shows to use a _middleware to rewrite paths so that the user doesnt now the full path to a given brand.
+
+          Delete the pages/_middleware.ts file to be able to view the original page directory structure.
         </Text>
 
         <Link href='/chene'>Chêne</Link>

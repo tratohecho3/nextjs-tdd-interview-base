@@ -1,9 +1,7 @@
-import Cookies from 'js-cookie'
-import { Layout, Page, Text, Button } from '@vercel/examples-ui'
-import { HOME_BRANDS } from '@lib/brand'
+import { Layout, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
 
-export default function Home() {
+export default function About() {
   const brand = useBrand();
 
   return (
@@ -18,7 +16,7 @@ export default function Home() {
   )
 }
 
-Home.Layout = Layout
+About.Layout = Layout
 
 export async function getStaticProps() {
   // Here you would return data about the brand
