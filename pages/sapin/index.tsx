@@ -1,4 +1,4 @@
-
+import type { NextApiRequest } from 'next'
 import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
 
@@ -36,7 +36,7 @@ export default function Home({ color, products }: Props) {
 
 Home.Layout = Layout
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req }: { req: NextApiRequest}) {
   let products = [];
   const { brand } = req.cookies;
 

@@ -1,8 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getBrand } from '@lib/brand';
+import { BRANDS, isValidBrand } from '@lib/brand';
 
 import { COOKIE_NAME } from '@lib/constants';
 import { NextURL } from 'next/dist/server/web/next-url';
+
+export function getBrand(req: NextRequest) {
+  let override = req.nextUrl.searchParams.get(COOKIE_NAME) || req.cookies[COOKIE_NAME];
+
+  const host = req.headers.get('host') || '';
+  const brand = BRANDS.find((b) => host.includes(b));
+
+  if (brand) {
+    return brand;
+  }
+
+  if (isValidBrand(override)){
+    return override;
+  }
+
+  // Default to a brand which is not found, and the 404 page can tell you where to look
+  return 'palmier';
+}
+
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
