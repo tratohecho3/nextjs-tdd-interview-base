@@ -6,6 +6,13 @@ This example shows how to render multiple brands using a _middleware.
 
 https://multi-brand.vercel.app
 
+You can also edit your /etc/hosts to view the brands based on the domain.
+
+```
+127.0.0.1 www.chene.com
+127.0.0.1 www.sapin.com
+```
+
 ## How to Use
 
 You can choose from one of the following two methods to use this repository:

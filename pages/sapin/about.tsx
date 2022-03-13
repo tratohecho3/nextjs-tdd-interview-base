@@ -1,4 +1,4 @@
-import { Layout, Page, Text } from '@vercel/examples-ui'
+import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
 
 export default function About() {
@@ -11,6 +11,9 @@ export default function About() {
       </Text>
       <Text className="text-lg mb-4">
         Our balsam fir are popular Christmas trees, with aromatic foliage that does not shed many needles on drying out.
+      </Text>
+      <Text>
+        <Link href="/">Back</Link>
       </Text>
     </Page>
   )
