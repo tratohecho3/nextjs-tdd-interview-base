@@ -4,7 +4,9 @@ This example shows how to render multiple brands using a _middleware.
 
 ## Demo
 
-https://multi-brand.vercel.app
+https://nextjs-tdd-interview-base.vercel.app/?brand=chene
+
+https://nextjs-tdd-interview-base.vercel.app/?brand=sapin
 
 You can also edit your /etc/hosts to view the brands based on the domain.
 
