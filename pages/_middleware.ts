@@ -19,7 +19,7 @@ export function getBrand(req: NextRequest) {
   }
 
   // Default to a brand which is not found, and the 404 page can tell you where to look
-  return 'palmier';
+  return 'sapin';
 }
 
 
