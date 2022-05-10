@@ -1,11 +1,13 @@
 import type { NextApiRequest } from 'next'
 import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
+import CardBody from 'pages/components/CardBody';
 
 type Product = {
   id: string;
   name: string;
   brand: string;
+  thumbnail: string;
 };
 type Props = {
   color: string;
@@ -21,7 +23,7 @@ export default function Home({ color, products }: Props) {
         Home page
       </Text>
       <Text className="text-lg mb-4">
-        You&apos;re currently visiting the <b>brand {brand.toUpperCase()}</b> {products.map(({name}) => name).join(', ')} website.
+        You&apos;re currently visiting the <b>brand {brand.toUpperCase()}</b> {products.map((product) => <CardBody key={product.name} name={product.name} image={product.thumbnail} />)} website.
       </Text>
       <Text className="mb-4">
         You can use the buttons below to change your assigned brand and refresh
