@@ -1,7 +1,8 @@
 import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
 import { useProducts } from '@hooks/useProducts';
-import CardBody from '../components/CardBody'
+// import CardBody from '../../components/CardBody'
+import CardBody from '../../components/CardBody';
 import { Card } from 'react-bootstrap';
 type Props = {
   color: string;
@@ -19,7 +20,7 @@ export default function Home({ color}: Props) {
         <Link href='/about'>About</Link> us
       </Text>
       <Text className="text-lg mb-4">
-        Welcome to <b>brand {brand.toUpperCase()}</b> {error ? error.message : products.map((product) => <CardBody key={product.name} name={product.name} image={product.thumbnail} />)}.
+        Welcome to <b>brand {brand.toUpperCase()}</b> {error ? error.message : products.map((product) => <CardBody key={product.name} name={product.name} image={product.thumbnail} id={product.id}/>)}.
       </Text>
     </Page>
   )

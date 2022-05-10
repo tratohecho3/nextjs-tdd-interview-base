@@ -1,7 +1,7 @@
 import type { NextApiRequest } from 'next'
 import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
-import CardBody from 'pages/components/CardBody';
+import CardBody from '../../components/CardBody';
 
 type Product = {
   id: string;
