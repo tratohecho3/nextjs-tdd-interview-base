@@ -24,18 +24,17 @@ export default function Home({ color, products }: Props) {
       </Text>
       <Text className="text-lg mb-4">
         You&apos;re currently visiting the <b>brand {brand.toUpperCase()}</b>{' '}
-        {products.map(({ name }) => name).join(', ')} website.
+        {products.map((product: any) => (
+          <Link key={product.id} href={`/${brand}/${product.id}`}>
+            <Thumbnail product={product} />
+          </Link>
+        ))}{' '}
+        website.
       </Text>
       <Text className="mb-4">You can use the buttons below to change your assigned brand and refresh the page:</Text>
       <Text className="text-bold mb-4">
         <Link href="/about">About</Link>
       </Text>
-
-      <div>
-        {products.map((product: any) => (
-          <Thumbnail key={product.id} product={product} />
-        ))}
-      </div>
     </Page>
   );
 }

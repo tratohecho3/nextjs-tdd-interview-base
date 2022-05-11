@@ -1,6 +1,7 @@
 import { Layout, Link, Page, Text } from '@vercel/examples-ui';
 import { useBrand } from '@hooks/useBrand';
 import { useProducts } from '@hooks/useProducts';
+import { Product } from '@hooks/useProducts';
 
 import Thumbnail from 'components/Thumbnail';
 
@@ -12,6 +13,7 @@ export default function Home({ color }: Props) {
   const brand = useBrand();
   const { data: { products } = { products: [] }, error } = useProducts();
 
+  console.log(brand);
   return (
     <Page>
       <Text variant="h2" className="mb-6" style={{ color }}>
@@ -22,14 +24,15 @@ export default function Home({ color }: Props) {
       </Text>
       <Text className="text-lg mb-4">
         Welcome to <b>brand {brand.toUpperCase()}</b>{' '}
-        {error ? error.message : products.map(({ name }) => name).join(', ')}.
+        {error
+          ? error.message
+          : products.map((product: Product) => (
+              <Link key={product.id} href={`/${brand}/${product.id}`}>
+                <Thumbnail product={product} />
+              </Link>
+            ))}
+        .
       </Text>
-
-      <div>
-        {products.map((product: any) => (
-          <Thumbnail key={product.id} product={product} />
-        ))}
-      </div>
     </Page>
   );
 }
