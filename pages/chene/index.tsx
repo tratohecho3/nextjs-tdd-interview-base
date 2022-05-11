@@ -1,27 +1,37 @@
-import { Layout, Link, Page, Text } from '@vercel/examples-ui'
+import { Layout, Link, Page, Text } from '@vercel/examples-ui';
 import { useBrand } from '@hooks/useBrand';
 import { useProducts } from '@hooks/useProducts';
+
+import Thumbnail from 'components/Thumbnail';
 
 type Props = {
   color: string;
 };
 
-export default function Home({ color}: Props) {
+export default function Home({ color }: Props) {
   const brand = useBrand();
-  const { data: { products } = { products: []}, error } = useProducts();
+  const { data: { products } = { products: [] }, error } = useProducts();
+
   return (
     <Page>
       <Text variant="h2" className="mb-6" style={{ color }}>
         Home page
       </Text>
       <Text className="text-lg mb-4">
-        <Link href='/about'>About</Link> us
+        <Link href="/about">About</Link> us
       </Text>
       <Text className="text-lg mb-4">
-        Welcome to <b>brand {brand.toUpperCase()}</b> {error ? error.message : products.map(({name}) => name).join(', ')}.
+        Welcome to <b>brand {brand.toUpperCase()}</b>{' '}
+        {error ? error.message : products.map(({ name }) => name).join(', ')}.
       </Text>
+
+      <div>
+        {products.map((product: any) => (
+          <Thumbnail key={product.id} product={product} />
+        ))}
+      </div>
     </Page>
-  )
+  );
 }
 
 Home.Layout = Layout;
@@ -31,6 +41,6 @@ export async function getServerSideProps() {
     props: {
       product: 'flooring',
       color: '#BB8141',
-    }
-  }
+    },
+  };
 }
