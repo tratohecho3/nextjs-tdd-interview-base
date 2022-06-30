@@ -1,11 +1,14 @@
 import type { NextApiRequest } from 'next'
 import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
+import React from 'react';
+import ProductCards from '../../components/productcard'
 
 type Product = {
   id: string;
   name: string;
   brand: string;
+  thumbnail: string;
 };
 type Props = {
   color: string;
@@ -14,15 +17,16 @@ type Props = {
 
 export default function Home({ color, products }: Props) {
   const brand = useBrand();
+  console.log(products)
+
+
 
   return (
     <Page>
       <Text variant="h2" className="mb-6" style={{ color }}>
         Home page
       </Text>
-      <Text className="text-lg mb-4">
-        You&apos;re currently visiting the <b>brand {brand.toUpperCase()}</b> {products.map(({name}) => name).join(', ')} website.
-      </Text>
+      <ProductCards products={products}/>
       <Text className="mb-4">
         You can use the buttons below to change your assigned brand and refresh
         the page:

@@ -5,6 +5,7 @@ type Product = {
   id: string;
   name: string;
   brand: string;
+  thumbnail: string;
 };
 
 export type Data = {
