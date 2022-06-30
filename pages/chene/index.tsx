@@ -1,6 +1,7 @@
 import { Layout, Link, Page, Text } from '@vercel/examples-ui'
 import { useBrand } from '@hooks/useBrand';
 import { useProducts } from '@hooks/useProducts';
+import ProductCards from '../../components/productcard'
 
 type Props = {
   color: string;
@@ -17,6 +18,7 @@ export default function Home({ color}: Props) {
       <Text className="text-lg mb-4">
         <Link href='/about'>About</Link> us
       </Text>
+      <ProductCards products={products}/>
       <Text className="text-lg mb-4">
         Welcome to <b>brand {brand.toUpperCase()}</b> {error ? error.message : products.map(({name}) => name).join(', ')}.
       </Text>
